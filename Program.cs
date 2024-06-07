@@ -26,6 +26,17 @@ else if((qoldiq >=0.25 && qoldiq < 0.75) || qoldiq >= 0.75){
     overall = butun + 0.5;
 }
 Console.WriteLine($"Your Overall Band Score {overall}");
+Console.Write($"And Your IELTS Category of ");
+
+switch(Math.Round(overall)){
+    case 5: Console.WriteLine("Modest");break;
+    case 6: Console.WriteLine("Competent");break;
+    case 7: Console.WriteLine("Good");break;
+    case 8: Console.WriteLine("Very Good");break;
+    case 9: Console.WriteLine("Expert");break;
+
+    default: Console.WriteLine("Below or above that range is Invalid");break;
+}
 Console.WriteLine("Do you want to continue? Yes (y) / No (n)");
 string text = Console.ReadLine().ToLower();
 if(text == "yes" || text == "y"){
@@ -36,3 +47,4 @@ else
     isSuccess = false;
 }
 }
+
